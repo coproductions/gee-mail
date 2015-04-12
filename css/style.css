@@ -1,0 +1,12 @@
+.siteHeading {
+	
+	height: 200px;
+}
+.container div {
+	padding: 5px;
+}
+h1 {
+	font-family: 'Shift', sans-serif;
+	color: black;
+	font-size: 48px; 
+}
