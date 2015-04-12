@@ -4,6 +4,39 @@
 		<link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
+      	
+      	var currentDiv = document.getElementById("main");  
+    	for ( i = 0 ; i < window.geemails.length ; i++ ){
+    		var mails = document.createElement("div");
+    		
+    		var date = document.createElement("div");
+    		var subject = document.createElement("div");
+    		var sender = document.createElement("div");
+    		var body = document.createElement("div");  
+    		var newDate = document.createTextNode(window.geemails[i].date+"      ");
+    		var newSubject = document.createTextNode(window.geemails[i].subject+"       ");
+    		var newSender = document.createTextNode(window.geemails[i].sender+"       ");
+    		var newBody = document.createTextNode(window.geemails[i].body);
+    		// date.appendChild(newDate);
+    		// subject.appendChild(newSubject);
+    		// sender.appendChild(newSender);
+    		// body.appendChild(newBody);
+    	
+    		mails.appendChild(newDate);
+    		mails.appendChild(newSender);
+    		mails.appendChild(newSubject);
+    		currentDiv.appendChild(mails);
+    		
+
+    		
+    	}
+    		
+  			// var newContent = document.createTextNode(window.geemails[i].subject); 
+  			// mails.appendChild(newContent); //add the text node to the newly created div. 
+  			
+    	
+    	
+ 		 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
@@ -11,8 +44,11 @@
     </script>
 	</head>
 	<body>
+	<div id="banner">
+		<h1>GeeMails!</h1>
+	</div>
 		<div class="container" id="main">
-			Build Me!
-		</div>
+			
+
 	</body>
 </html>
