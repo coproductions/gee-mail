@@ -7,29 +7,14 @@
       	
       	var mainDiv = document.getElementById("main");
       	var counterBlock = document.getElementById("counter") 
-      	
-      
       	counterBlock.innerHTML = window.geemails.length;
-
-      	
-
-
 
     	for ( i = 0 ; i < window.geemails.length ; i++ ){
     		var mails = document.createElement("div");
-    		 
-    		// var newDate = document.createTextNode(window.geemails[i].date+"      ");
-    		// var newSubject = document.createTextNode(window.geemails[i].subject+"       ");
-    		// var newSender = document.createTextNode(window.geemails[i].sender+"       ");
-    		// var newBody = document.createTextNode(window.geemails[i].body);
     		mails.innerHTML = window.geemails[i].date + window.geemails[i].sender + window.geemails[i].subject;
-    	
-    		
     		mainDiv.appendChild(mails);
-    		//counter += 1;
-    		
-
-    		
+    		var bodyDisplay = document.getElementById("bodyDisplay");
+    		mails.onclick = function(){bodyDisplay.innerHTML = window.geemails[i].body};
     	}
     		
 
@@ -37,31 +22,14 @@
       		var newMessage = getNewMessage();
       		var loopMail = document.createElement("div");
       		loopMail.innerHTML = newMessage.date + newMessage.sender + newMessage.subject ;
-      		
-      		
       		mainDiv.insertBefore(loopMail , mainDiv.firstChild);
       		window.geemails.push(newMessage);
-      		
-      		
-      		
       		counterBlock.innerHTML = window.geemails.length;
-      		
-      		
-
       	}
-      	window.setInterval(prependLoopies,3000);
 
-      	
-      	
+      	window.setInterval(prependLoopies,2000);
 
 
-
-    	
-    		
-  			// var newContent = document.createTextNode(window.geemails[i].subject); 
-  			// mails.appendChild(newContent); //add the text node to the newly created div. 
-  			
-    	
     	
  		 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
@@ -74,6 +42,7 @@
 		<div id="banner">
 			<h1>GeeMails!</h1>
 		</div>
+		<div id="bodyDisplay"></div>
 		<div id="counter"></div> 
 		<div class="container" id="main">
 			
