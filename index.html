@@ -9,25 +9,75 @@
       	var counterBlock = document.getElementById("counter") 
       	counterBlock.innerHTML = window.geemails.length;
 
-    	for ( i = 0 ; i < window.geemails.length ; i++ ){
+    	for ( i = window.geemails.length-1 ; i >=0 ; i-- ){
     		var mails = document.createElement("div");
-    		mails.innerHTML = window.geemails[i].date + window.geemails[i].sender + window.geemails[i].subject;
+    		mails.className = "email";
+    		var mailDate = document.createElement("div");
+    		var mailSender = document.createElement("div");
+    		var mailSubject = document.createElement("div");
+    		var mailBody = document.createElement("div");
+			mailDate.className = "date";
+			mailSender.className = "sender";
+			mailSubject.className = "subject";
+			mailBody.className = "body";
+			mailDate.innerHTML = window.geemails[i].date;
+			mailSender.innerHTML = window.geemails[i].sender;
+			mailSubject.innerHTML = window.geemails[i].subject;
+			mailBody.innerHTML = window.geemails[i].body;
+    	
     		mainDiv.appendChild(mails);
-    		var bodyDisplay = document.getElementById("bodyDisplay");
-    		mails.onclick = function(){bodyDisplay.innerHTML = window.geemails[i].body};
+
+    		mails.appendChild(mailDate);
+    		mails.appendChild(mailSender);
+    		mails.appendChild(mailSubject);
+
+
+    	
+
+    		mails.onclick = function(){mails.appendChild(bodyDisplay)};
+    		
+    		
     	}
+    	
     		
 
       	var prependLoopies = function() {
       		var newMessage = getNewMessage();
       		var loopMail = document.createElement("div");
-      		loopMail.innerHTML = newMessage.date + newMessage.sender + newMessage.subject ;
+
+
+
+			
+			var mailDate = document.createElement("div");
+    		var mailSender = document.createElement("div");
+    		var mailSubject = document.createElement("div");
+    		var mailBody = document.createElement("div");
+			mailDate.className = "date";
+			mailSender.className = "sender";
+			mailSubject.className = "subject";
+			mailBody.className = "body";
+
+			mailDate.innerHTML = newMessage.date;
+			mailSender.innerHTML = newMessage.sender;
+			mailSubject.innerHTML = newMessage.subject;
+			mailBody.innerHTML = newMessage.body;
+
+			loopMail.appendChild(mailDate);
+    		loopMail.appendChild(mailSender);
+    		loopMail.appendChild(mailSubject);
+
+      		
       		mainDiv.insertBefore(loopMail , mainDiv.firstChild);
       		window.geemails.push(newMessage);
       		counterBlock.innerHTML = window.geemails.length;
+
+
+
+     
       	}
 
       	window.setInterval(prependLoopies,2000);
+      	
 
 
     	
@@ -39,16 +89,15 @@
     </script>
 	</head>
 	<body>
-		<div id="banner">
+		<header id="banner">
 			<h1>GeeMails!</h1>
-		</div>
+		</header>
 		<div id="bodyDisplay"></div>
 		<div id="counter"></div> 
 		<div class="container" id="main">
 			
 
-		</div>
-			
+		
 
 	</body>
 </html>

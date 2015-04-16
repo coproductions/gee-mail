@@ -6,7 +6,17 @@
 	padding: 5px;
 }
 h1 {
-	font-family: 'Shift', sans-serif;
+	font-family: 'Helvetica';
 	color: black;
 	font-size: 48px; 
+}
+
+.date{
+	display: inline;
+}
+.subject {
+	display: inline;
+}
+.sender {
+	display: inline;
 }
