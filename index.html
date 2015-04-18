@@ -6,12 +6,13 @@
       window.onload = function(){
       	
       	var mainDiv = document.getElementById("main");
-      	var counterBlock = document.getElementById("counter") 
+      	var counterBlock = document.getElementById("counter");
       	counterBlock.innerHTML = window.geemails.length;
 
     	for ( i = window.geemails.length-1 ; i >=0 ; i-- ){
     		var mails = document.createElement("div");
     		mails.className = "email";
+    		mails.className = "unread";
     		var mailDate = document.createElement("div");
     		var mailSender = document.createElement("div");
     		var mailSubject = document.createElement("div");
@@ -47,6 +48,8 @@
 
 
 			loopMail.className = "email";
+			loopMail.className = "unread";
+
 			var mailDate = document.createElement("div");
     		var mailSender = document.createElement("div");
     		var mailSubject = document.createElement("div");
@@ -73,31 +76,36 @@
       		counterBlock.innerHTML = window.geemails.length;
 
 
-
-     
       	}
 
       	window.setInterval(prependLoopies,2000);
 
+      	// mainDiv.addEventListener('click', hideOldBody);
+      	// function hideOldBody(event){
+      	// 	var body = document.getElementByClassName("body");
+      	// 	body.style.display = "none";
+      	// }
+
       	mainDiv.addEventListener('click', showMessageBody);
 
       	function showMessageBody(event){
-      		
-      		
+      		//event.target.getElementById("active").removeAttribute("id");
       		if(event.target.className == "email"){
-      			event.target.style.backgroundColor = "#E8E8E8  ";
+      			event.target.className = "read";
+      			event.target.id = "active";
       			event.target.childNodes[3].style.display = "block";
       		}
-      		else if (event.target.className == "date" || event.target.className == "sender" || event.target.className == "subject") {
-      			event.target.parentNode.style.backgroundColor = "#E8E8E8  ";
-      			event.target.parentNode.childNodes[3].style.display = "block";
-      		}
-
-
       		
+      		else if (event.target.className == "date" || event.target.className == "sender" || event.target.className == "subject"){
+      			event.target.parentNode.className = "read";
+      			event.target.parentNode.id = "active";
+      			event.target.parentNode.childNodes[3].style.display = "block";
+      		};
+      			
+      			
       	};
+      
       	
-
 
     	
  		 
@@ -109,14 +117,11 @@
 	</head>
 	<body>
 		<header id="banner">
-			<h1>GeeMails!</h1>
+			<h1>GeeMail!</h1>
 		</header>
-		<div id="bodyDisplay"></div>
 		<div id="counter"></div> 
-		<div class="container" id="main">
-			
+		<content class="container" id="main"></content>
 
-		
 
 	</body>
 </html>

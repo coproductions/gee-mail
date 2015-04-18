@@ -1,11 +1,30 @@
-.siteHeading {
+#banner {
+	padding: 5px;
+	height: 60px;
+	background-color: #666fFF;
+	width: auto;
+}
+#counter {
+	margin: auto;
 	
-	height: 200px;
+	
+}
+
+#active {
+	border: solid;
+}
+.unread {
+	background-color: #C0C0C0 ;
+}
+.read {
+	background-color: transparent;
 }
 .container div {
 	padding: 5px;
 }
+
 h1 {
+	margin: auto;
 	font-family: 'Helvetica';
 	color: black;
 	font-size: 48px; 
@@ -13,9 +32,11 @@ h1 {
 
 .date{
 	display: inline;
+	
 }
 .subject {
 	display: inline;
+	font-weight: bold;
 }
 .sender {
 	display: inline;
