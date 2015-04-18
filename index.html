@@ -24,22 +24,21 @@
 			mailSender.innerHTML = window.geemails[i].sender;
 			mailSubject.innerHTML = window.geemails[i].subject;
 			mailBody.innerHTML = window.geemails[i].body;
+
+			mailBody.style.display = "none";
     	
     		mainDiv.appendChild(mails);
 
     		mails.appendChild(mailDate);
     		mails.appendChild(mailSender);
     		mails.appendChild(mailSubject);
-
-
-    	
-
-    		mails.onclick = function(){mails.appendChild(bodyDisplay)};
-    		
+    		mails.appendChild(mailBody);
     		
     	}
     	
+
     		
+   
 
       	var prependLoopies = function() {
       		var newMessage = getNewMessage();
@@ -47,7 +46,7 @@
 
 
 
-			
+			loopMail.className = "email";
 			var mailDate = document.createElement("div");
     		var mailSender = document.createElement("div");
     		var mailSubject = document.createElement("div");
@@ -56,6 +55,7 @@
 			mailSender.className = "sender";
 			mailSubject.className = "subject";
 			mailBody.className = "body";
+			mailBody.style.display = "none";
 
 			mailDate.innerHTML = newMessage.date;
 			mailSender.innerHTML = newMessage.sender;
@@ -65,6 +65,7 @@
 			loopMail.appendChild(mailDate);
     		loopMail.appendChild(mailSender);
     		loopMail.appendChild(mailSubject);
+    		loopMail.appendChild(mailBody);
 
       		
       		mainDiv.insertBefore(loopMail , mainDiv.firstChild);
@@ -77,6 +78,20 @@
       	}
 
       	window.setInterval(prependLoopies,2000);
+
+      	mainDiv.addEventListener('click', showMessageBody);
+
+      	function showMessageBody(event){
+      		if(event.target.className = 'email'){
+      			event.target.style.backgroundColor = "grey";
+      			event.target.childNodes[3].style.display = "block";
+
+
+      		}
+
+
+      		
+      	};
       	
 
 
