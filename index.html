@@ -82,11 +82,15 @@
       	mainDiv.addEventListener('click', showMessageBody);
 
       	function showMessageBody(event){
-      		if(event.target.className = 'email'){
-      			event.target.style.backgroundColor = "grey";
+      		
+      		
+      		if(event.target.className == "email"){
+      			event.target.style.backgroundColor = "#E8E8E8  ";
       			event.target.childNodes[3].style.display = "block";
-
-
+      		}
+      		else if (event.target.className == "date" || event.target.className == "sender" || event.target.className == "subject") {
+      			event.target.parentNode.style.backgroundColor = "#E8E8E8  ";
+      			event.target.parentNode.childNodes[3].style.display = "block";
       		}
 
 
