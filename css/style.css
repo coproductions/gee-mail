@@ -22,8 +22,9 @@ body {
 
 
 #active {
-	border-top: solid 2px #666fFF;
-	border-bottom: solid 2px #666fFF;
+	border-top: solid 3px #666fFF;
+	
+	background-color: white;
 }
 .email .subject {
 	font-weight: bold;
@@ -33,7 +34,8 @@ body {
 	border-bottom: solid  1px;
 }
 .read {
-	background-color: transparent;
+	background-color: #E8E8E8;
+	border-bottom: solid  1px;
 } 
 #main {
 	box-shadow: 10px 10px 5px #888888;

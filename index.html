@@ -110,6 +110,7 @@
       	function hideMessageBody(event){
 			if (event.target.className == "body"){
 				event.target.parentNode.childNodes[3].style.display = "none";
+				event.target.parentNode.removeAttribute("id");
 			}
       	};
 
