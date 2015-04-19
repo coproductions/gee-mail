@@ -1,26 +1,46 @@
+body {
+	width: 800px;
+	margin: 0px;
+	font-family: helvetica;
+
+}
+
 #banner {
 	padding: 5px;
 	height: 60px;
 	background-color: #666fFF;
 	width: auto;
+	box-shadow: 0px 5px 5px #888888;
 }
 #counter {
-	margin: auto;
-	
+	margin: 10px;
+	font-family: helvetica;
+	font-size: 20;
+	text-align: center;
 	
 }
 
+
 #active {
-	border: solid;
+	border-top: solid 2px #666fFF;
+	border-bottom: solid 2px #666fFF;
 }
-.unread {
+.email .subject {
+	font-weight: bold;
+}
+.email {
 	background-color: #C0C0C0 ;
+	border-bottom: solid  1px;
 }
 .read {
 	background-color: transparent;
+} 
+#main {
+	box-shadow: 10px 10px 5px #888888;
 }
 .container div {
 	padding: 5px;
+	margin: 0px 10px 0px 10px;
 }
 
 h1 {
@@ -28,15 +48,18 @@ h1 {
 	font-family: 'Helvetica';
 	color: black;
 	font-size: 48px; 
+	position: center;
 }
 
 .date{
 	display: inline;
+	font-size: 85%;
+
 	
 }
 .subject {
 	display: inline;
-	font-weight: bold;
+
 }
 .sender {
 	display: inline;

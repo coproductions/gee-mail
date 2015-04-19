@@ -12,7 +12,7 @@
     	for ( i = window.geemails.length-1 ; i >=0 ; i-- ){
     		var mails = document.createElement("div");
     		mails.className = "email";
-    		mails.className = "unread";
+    		
     		var mailDate = document.createElement("div");
     		var mailSender = document.createElement("div");
     		var mailSubject = document.createElement("div");
@@ -48,7 +48,7 @@
 
 
 			loopMail.className = "email";
-			loopMail.className = "unread";
+			
 
 			var mailDate = document.createElement("div");
     		var mailSender = document.createElement("div");
@@ -89,8 +89,10 @@
       	mainDiv.addEventListener('click', showMessageBody);
 
       	function showMessageBody(event){
-      		//event.target.getElementById("active").removeAttribute("id");
-      		if(event.target.className == "email"){
+      		// if(getElementById("active")){
+      		// 	getElementById("active").removeAttribute("id");
+      		// }
+      		if(event.target.className.split(" ")[0] == "email"){
       			event.target.className = "read";
       			event.target.id = "active";
       			event.target.childNodes[3].style.display = "block";
@@ -101,11 +103,18 @@
       			event.target.parentNode.id = "active";
       			event.target.parentNode.childNodes[3].style.display = "block";
       		};
-      			
-      			
       	};
       
-      	
+    	mainDiv.addEventListener('click', hideMessageBody);
+
+      	function hideMessageBody(event){
+			if (event.target.className == "body"){
+				event.target.parentNode.childNodes[3].style.display = "none";
+			}
+      	};
+
+      	// var email = getElementByClassName('email');
+      	// email.onclick = function(){email.id = "active"};
 
     	
  		 
